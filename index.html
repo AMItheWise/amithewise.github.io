@@ -6,69 +6,113 @@
   <title>Amir — CV</title>
   <meta name="description" content="Curriculum Vitae — Amir" />
 
-  <!-- Simple, modern single-file CV template. Edit the content inside <main> to customize. -->
-
   <style>
-    :root{
-      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#6ee7b7; --text:#e6eef6;
-      --maxw:900px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:linear-gradient(180deg,#071124 0%, #081426 60%); color:var(--text); -webkit-font-smoothing:antialiased;
-      line-height:1.45; padding:32px; display:flex; align-items:center; justify-content:center;
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: #6ee7b7;
+      --text: #e6eef6;
+      --maxw: 900px;
     }
 
-    .container{width:100%; max-width:var(--maxw);}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:16px; padding:28px; box-shadow:0 10px 30px rgba(2,6,23,0.6); overflow:hidden}
-
-    header{display:flex; gap:20px; align-items:center}
-    .avatar{width:96px;height:96px;border-radius:14px;flex:0 0 96px;background:linear-gradient(135deg,var(--accent), #60a5fa); display:flex;align-items:center;justify-content:center;font-weight:700;color:#06202a}
-    h1{margin:0;font-size:24px}
-    .title{color:var(--accent); font-weight:600}
-    .subtitle{color:var(--muted); font-size:14px}
-
-    .top-right{margin-left:auto; display:flex; gap:8px; align-items:center}
-    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06); padding:8px 12px;border-radius:10px;color:var(--text);cursor:pointer;font-size:14px}
-    .btn.ghost{background:transparent}
-
-    main{display:grid; grid-template-columns: 1fr 320px; gap:28px; margin-top:20px}
-    .section{background:transparent}
-    .card-block{background:rgba(255,255,255,0.02); padding:16px; border-radius:10px; margin-bottom:14px}
-
-    .info-row{display:flex; gap:10px; align-items:center; color:var(--muted); font-size:14px}
-    .skills{display:flex; flex-wrap:wrap; gap:8px}
-    .skill{padding:6px 10px; border-radius:999px; background:rgba(255,255,255,0.03); font-size:13px}
-
-    .job{margin-bottom:12px}
-    .job h4{margin:0;font-size:15px}
-    .job .muted{color:var(--muted);font-size:13px}
-
-    aside{min-width:200px}
-    .side-card{padding:14px; border-radius:10px; background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
-
-    footer{margin-top:18px; display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:13px}
-
-    /* Responsive */
-    @media (max-width:920px){
-      body{padding:18px}
-      main{grid-template-columns:1fr;}
-      .avatar{width:84px;height:84px}
+    [data-theme="light"] {
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --muted: #4b5563;
+      --accent: #0ea5e9;
+      --text: #111827;
     }
 
-    /* Print adjustments */
-    @media print{
-      body{background: white; color: black}
-      .card{box-shadow:none; border-radius:0}
-      .top-right{display:none}
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.45;
+      padding: 80px 32px 32px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
     }
 
-    /* Utility small */
-    .muted{color:var(--muted)}
-    .link{color:var(--accent); text-decoration:none}
+    .container { width: 100%; max-width: var(--maxw); }
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      overflow: hidden;
+    }
 
+    header { display: flex; gap: 20px; align-items: center; }
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 14px;
+      flex: 0 0 96px;
+      background: linear-gradient(135deg, var(--accent), #60a5fa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #06202a;
+    }
+
+    h1 { margin: 0; font-size: 24px; }
+    .title { color: var(--accent); font-weight: 600; }
+    .subtitle { color: var(--muted); font-size: 14px; }
+
+    .top-right { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+    .btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 8px 12px;
+      border-radius: 10px;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 28px;
+      margin-top: 20px;
+    }
+
+    .card-block { background: rgba(255,255,255,0.02); padding: 16px; border-radius: 10px; margin-bottom: 14px; }
+
+    .info-row { display: flex; gap: 10px; align-items: center; color: var(--muted); font-size: 14px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill { padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.03); font-size: 13px; }
+
+    .job { margin-bottom: 12px; }
+    .job h4 { margin: 0; font-size: 15px; }
+    .job .muted { color: var(--muted); font-size: 13px; }
+
+    aside { min-width: 200px; }
+    .side-card { padding: 14px; border-radius: 10px; background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent); }
+
+    footer { margin-top: 18px; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 920px) {
+      body { padding: 60px 18px 18px; }
+      main { grid-template-columns: 1fr; }
+      .avatar { width: 84px; height: 84px; }
+    }
+
+    @media print {
+      body { background: white; color: black; }
+      .card { box-shadow: none; border-radius: 0; }
+      .top-right { display: none; }
+    }
+
+    .muted { color: var(--muted); }
+    .link { color: var(--accent); text-decoration: none; }
   </style>
 </head>
 <body>
@@ -76,10 +120,7 @@
     <div class="card" role="document">
 
       <header>
-        <div class="avatar" aria-hidden>
-          AM
-        </div>
-
+        <div class="avatar">AM</div>
         <div>
           <h1>Amir <span class="title">— Software Engineer</span></h1>
           <div class="subtitle">Game developer · Full‑stack · Flutter & Unity</div>
@@ -93,21 +134,18 @@
         </div>
 
         <div class="top-right">
-          <button class="btn" id="downloadBtn" title="Print / Save as PDF">Download PDF</button>
-          <button class="btn" id="themeBtn" title="Toggle light/dark">Toggle Theme</button>
+          <button class="btn" id="downloadBtn">Download PDF</button>
+          <button class="btn" id="themeBtn">Toggle Theme</button>
         </div>
       </header>
 
       <main>
         <section>
-
-          <!-- Summary: edit this text -->
           <div class="card-block">
             <strong>Summary</strong>
             <p class="muted" style="margin-top:8px">Experienced game developer and full‑stack engineer. I design and build playable systems, multiplayer features, and polished user experiences using Unity, Unreal, Flutter, and web tech. Passionate about optimizing pipelines and shipping playable prototypes fast.</p>
           </div>
 
-          <!-- Experience -- edit jobs here -->
           <div class="card-block">
             <strong>Experience</strong>
             <div class="job" style="margin-top:10px">
@@ -123,7 +161,6 @@
             </div>
           </div>
 
-          <!-- Projects -->
           <div class="card-block">
             <strong>Selected Projects</strong>
             <ul style="margin:8px 0 0 18px; padding:0" class="muted">
@@ -132,12 +169,10 @@
             </ul>
           </div>
 
-          <!-- Education -->
           <div class="card-block">
             <strong>Education</strong>
             <div class="muted" style="margin-top:8px">BSc Computer Science — University Name · 2015 — 2019</div>
           </div>
-
         </section>
 
         <aside>
@@ -176,34 +211,21 @@
   </div>
 
   <script>
-    // ---- Simple JS helpers: edit these to customize behavior ----
     document.getElementById('dateStamp').textContent = new Date().toLocaleDateString();
 
-    document.getElementById('downloadBtn').addEventListener('click', function(){
+    document.getElementById('downloadBtn').addEventListener('click', function() {
       window.print();
     });
 
     const themeBtn = document.getElementById('themeBtn');
-    let dark = true;
-    themeBtn.addEventListener('click', ()=>{
-      if(dark){
-        document.documentElement.style.setProperty('--bg','#ffffff');
-        document.documentElement.style.setProperty('--card','#f7fafc');
-        document.documentElement.style.setProperty('--text','#0b1220');
-        document.documentElement.style.setProperty('--muted','#596275');
-        dark=false;
+    themeBtn.addEventListener('click', () => {
+      const root = document.documentElement;
+      if (root.getAttribute('data-theme') === 'light') {
+        root.removeAttribute('data-theme');
       } else {
-        document.documentElement.style.setProperty('--bg','#0f1724');
-        document.documentElement.style.setProperty('--card','#0b1220');
-        document.documentElement.style.setProperty('--text','#e6eef6');
-        document.documentElement.style.setProperty('--muted','#9aa4b2');
-        dark=true;
+        root.setAttribute('data-theme', 'light');
       }
     });
-
-    // ---- Quick customization hint (visible only in source):
-    // Replace name, contact, jobs, projects and skills directly in the HTML above.
-    // To publish on GitHub Pages: create a new repo with this file as index.html, push, then enable Pages in repo settings or name repo username.github.io
   </script>
 </body>
 </html>
